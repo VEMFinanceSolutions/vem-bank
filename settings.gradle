@@ -1,0 +1,5 @@
+rootProject.name = 'VEM-Finance-Solutions'
+include 'auth-service'
+include 'account-service'
+include 'sms-service'
+

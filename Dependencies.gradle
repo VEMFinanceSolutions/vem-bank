@@ -1,0 +1,19 @@
+ext {
+    versions = [
+            springBoot         : "3.2.2",
+            swagger            : "1.6.15",
+            lombok             : "1.18.30",
+            mapstruct          : "1.5.5.Final"
+    ]
+
+    libs = [
+            springBootWeb                  : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
+
+            swagger                        : "org.springdoc:springdoc-openapi-ui:$versions.swagger",
+
+            lombok                         : "org.projectlombok:lombok:$versions.lombok",
+
+            mapstruct                      : "org.mapstruct:mapstruct:$versions.mapstruct",
+            mapstructProcessor             : "org.mapstruct:mapstruct-processor:$versions.mapstruct"
+    ]
+}
