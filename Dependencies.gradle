@@ -1,19 +1,26 @@
 ext {
     versions = [
-            springBoot         : "3.2.2",
-            swagger            : "1.6.15",
-            lombok             : "1.18.30",
-            mapstruct          : "1.5.5.Final"
+            springBoot: "3.2.2",
+            swagger   : "1.6.15",
+            lombok    : "1.18.30",
+            mapstruct : "1.5.5.Final",
+            postgres  : "42.3.8",
+            mysql     : "8.0.28"
     ]
 
     libs = [
-            springBootWeb                  : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
+            springBootWeb     : "org.springframework.boot:spring-boot-starter-web:$versions.springBoot",
+            springBootDataJpa : "org.springframework.boot:spring-boot-starter-data-jpa:$versions.springBoot",
 
-            swagger                        : "org.springdoc:springdoc-openapi-ui:$versions.swagger",
+            swagger           : "org.springdoc:springdoc-openapi-ui:$versions.swagger",
 
-            lombok                         : "org.projectlombok:lombok:$versions.lombok",
+            lombok            : "org.projectlombok:lombok:$versions.lombok",
 
-            mapstruct                      : "org.mapstruct:mapstruct:$versions.mapstruct",
-            mapstructProcessor             : "org.mapstruct:mapstruct-processor:$versions.mapstruct"
+            mapstruct         : "org.mapstruct:mapstruct:$versions.mapstruct",
+            mapstructProcessor: "org.mapstruct:mapstruct-processor:$versions.mapstruct",
+
+            postgres          : "org.postgresql:postgresql:$versions.postgres",
+
+            mysql             : "mysql:mysql-connector-java:$versions.mysql"
     ]
 }
