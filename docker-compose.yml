@@ -1,0 +1,33 @@
+version: '0.0.1'
+
+networks:
+  vem-network:
+    driver: bridge
+
+services:
+  vem-auth-db:
+    image: mysql
+    container_name: vem-mysql-auth-db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    networks:
+      - vem-network
+    environment:
+      MYSQL_ROOT_PASSWORD: vem123456
+      MYSQL_USER: vem
+      MYSQL_PASSWORD: vem123456
+      MYSQL_DATABASE: vem-auth-db		
+    ports:
+      - 3306:3306
+
+  vem-account-db:
+    image: postgres:latest
+    container_name: vem-postgres-account-db
+    networks:
+      - vem-network
+    environment:
+      POSTGRES_DB: vem-account-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: vem123456
+    ports:
+      - "5432:5432"
