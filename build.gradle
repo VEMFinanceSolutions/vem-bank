@@ -57,3 +57,130 @@ configurations {
         extendsFrom annotationProcessor
     }
 }
+
+
+/*
+// Buraya yazılan özellikler alttaki tüm microservislerde yazılmasa bile etkili olacaktır.
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.2'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'application'
+    id 'java-library'
+}
+
+// Tüm projelerde (root + sub) gerekli ayarları belirlemek için:
+allprojects {
+    apply from: "${rootDir}/Dependencies.gradle"
+    apply plugin: 'application'
+    group = 'org.vemfs'
+    version = 'v.0.0.1'
+    sourceCompatibility=JavaVersion.VERSION_19
+    targetCompatibility=JavaVersion.VERSION_19
+}
+
+allprojects {
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+    repositories {
+        mavenCentral()
+        google()
+    }
+    configurations {
+        compileOnly{
+            extendsFrom annotationProcessor
+        }
+    }
+    ext {
+        set('springCloudVersion', "2023.0.0")
+    }
+    dependencies {
+        implementation libs.springBootActuator
+        implementation libs.springBootAMQP
+        implementation libs.springBootBatch
+        implementation libs.springBootCassandra
+        implementation libs.springBootElasticsearch
+        implementation libs.springBootJPA
+        implementation libs.springBootMongoDB
+        implementation libs.springBootRedis
+        implementation libs.springBootMail
+        implementation libs.springBootSecurity
+        implementation libs.springBootValidation
+        implementation libs.springBootWeb
+        implementation libs.springCloudOpenFeign
+        implementation libs.springCloudConfigClient
+//        implementation libs.springCloudConfig                  // Move this to responsible microservice (Config Service)
+//        implementation libs.springCloudConfigServer            // Move this to responsible microservice (Config Service)
+//        implementation libs.springCloudGateway                 // Move this to responsible microservice (Gateway Service)
+//        implementation libs.springCloudCircuitBreaker          // Move this to responsible microservice (Gateway Service)
+//        implementation libs.springCloudCircuitBreakerReactor   // Move this to responsible microservice (Gateway Service)
+//        implementation libs.springCloudEurekaClient            // ( ? )
+//        implementation libs.springCloudEurekaServer            // Move this to responsible microservice (Eureka Service)
+        implementation libs.micrometer
+        implementation libs.zipkinBrave
+        implementation libs.prometheus
+        compileOnly libs.lombok
+        annotationProcessor libs.lombok
+        implementation libs.springDockerCompose
+        implementation libs.postgreSQL
+        implementation libs.mySQL
+        implementation libs.mapStruct
+        annotationProcessor libs.mapStructProcessor
+        implementation libs.jwt
+        implementation libs.swagger
+//        implementation libs.iTextPDF                           // Deprecated, use OpenPDF instead
+        implementation libs.openPDF
+        implementation libs.jasperReports
+        implementation libs.twilio
+        implementation libs.iban4J
+
+        */
+/* TEST DEPENDENCIES - NOT FINAL!
+        testImplementation libs.springBootTest
+        testImplementation 'org.springframework.amqp:spring-rabbit-test'
+        testImplementation 'org.springframework.batch:spring-batch-test'
+        testImplementation 'org.springframework.security:spring-security-test'
+        testCompileOnly libs.lombok
+        testAnnotationProcessor libs.lombok
+        *//*
+
+    }
+
+    dependencyManagement { // kendisi eklemis ( ? )
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    */
+/*  FOR TEST
+    tasks.named('test') {
+        useJUnitPlatform()
+    }*//*
+
+}
+
+// Sadece sub projelerde gerekli ayarları belirlemek için:
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java-library'
+    apply plugin: 'eclipse'
+    apply plugin: 'idea'
+
+    buildscript {
+        dependencies {
+            classpath("org.springframework.boot:spring-boot-gradle-plugin:${versions.springBoot}")
+        }
+    }
+
+    tasks.withType(JavaCompile).configureEach { // Database Türkçe karakter için
+        options.encoding = 'UTF-8'
+    }
+}
+
+*/
