@@ -73,7 +73,7 @@ plugins {
 allprojects {
     apply from: "${rootDir}/Dependencies.gradle"
     apply plugin: 'application'
-    group = 'org.vemfs'
+    group = 'org.vem'
     version = 'v.0.0.1'
     sourceCompatibility=JavaVersion.VERSION_19
     targetCompatibility=JavaVersion.VERSION_19
